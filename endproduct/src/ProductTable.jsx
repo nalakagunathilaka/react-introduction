@@ -1,7 +1,6 @@
 import React from 'react';
 import ProductRow from './ProductRow.jsx';
 import SearchBar from './SearchBar.jsx';
-import data from './data.js';
 
 export default class ProductTable extends React.Component {
     constructor() {
@@ -39,7 +38,7 @@ export default class ProductTable extends React.Component {
                             <th>Price</th>
                         </tr>
                         {
-                            data.map((product)=>{
+                            this.props.products.map((product)=>{
                                 if (product.name.indexOf(this.state.filterText) === -1) {
                                     return;
                                 }
